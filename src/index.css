@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  color: black;
+  background-color: white;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1067%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(194%2c 207%2c 221%2c 1)'%3e%3c/rect%3e%3cg transform='translate(0%2c 0)' stroke-linecap='round'%3e%3cpath d='M276 187 L276 373' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M313 191.82 L313 368.18' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M350 176.25 L350 383.75' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M387 175.23 L387 384.77' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M424 260.75 L424 299.25' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M461 228.38 L461 331.62' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M498 155.75 L498 404.25' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M535 145.15 L535 414.86' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M572 246.78 L572 313.22' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M609 121.01 L609 438.99' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M646 169.94 L646 390.06' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M683 193.8 L683 366.2' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M720 114.13 L720 445.87' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M757 193.93 L757 366.07' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M794 237.52 L794 322.48' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M831 200.31 L831 359.69' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M868 140.66 L868 419.34' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M905 143.96 L905 416.04' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M942 256.87 L942 303.13' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M979 148.93 L979 411.07' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M1016 196.17 L1016 363.83' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M1053 119.45 L1053 440.55' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M1090 209.31 L1090 350.69' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3cpath d='M1127 260.2 L1127 299.8' stroke-width='27.75' stroke='rgba(236%2c 213%2c 217%2c 1)'%3e%3c/path%3e%3cpath d='M1164 239.76 L1164 320.24' stroke-width='27.75' stroke='rgba(143%2c 173%2c 224%2c 1)'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1067'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.timerBtn {
+  all: unset;
+  cursor: pointer;
+  @apply rounded-full w-[150px] h-[150px]  bg-blue-800 text-center shadow-2xl hover:w-[180px] hover:h-[180px] p-10 shadow;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.time {
+  @apply bg-blue-800 rounded-3xl px-2 py-3 shadow;
+}
+
+.lapList::-webkit-scrollbar-track{
+  visibility: hidden;
+  width: 0;
+
+}
+
+.lapList::-webkit-scrollbar{
+  display:none;
+}

@@ -1,0 +1,15 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.time{
+  @apply bg-blue-800 rounded-3xl px-2 py-3;
+}
