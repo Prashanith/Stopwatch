@@ -4,19 +4,17 @@ function StopWatch() {
   const [timeElapsed, setElapsedTime] = useState<number>(0);
   const [laps, setLaps] = useState<string[]>([]);
 
+  const getHours = (t: number) => Math.floor(t / 3600);
+  const getMinutes = (t: number) => Math.floor((t % 3600) / 60);
+  const getSeconds = (t: number) => Math.floor(t % 60);
+
   function addLap() {
     const lap =
-      Math.floor((timeElapsed / (1000 * 60 * 60)) % 24)
-        .toString()
-        .padStart(2, "0") +
+      getHours(timeElapsed).toString().padStart(2, "0") +
       ":" +
-      Math.floor((timeElapsed / (1000 * 60)) % 60)
-        .toString()
-        .padStart(2, "0") +
+      getMinutes(timeElapsed).toString().padStart(2, "0") +
       ":" +
-      Math.floor((timeElapsed / 1000) % 60)
-        .toString()
-        .padStart(2, "0");
+      getSeconds(timeElapsed).toString().padStart(2, "0");
     setLaps((prevLaps) => [...prevLaps, lap]);
   }
 
@@ -42,21 +40,15 @@ function StopWatch() {
           {timeElapsed > 0 && (
             <div className="text-white text-9xl flex flex-row justify-center items-center">
               <p className="hours time">
-                {Math.floor(timeElapsed / 3600)
-                  .toString()
-                  .padStart(2, "0")}
+                {getHours(timeElapsed).toString().padStart(2, "0")}
               </p>
               <p className="diff">:</p>
               <p className="minutes time">
-                {Math.floor((timeElapsed % 3600) / 60)
-                  .toString()
-                  .padStart(2, "0")}
+                {getMinutes(timeElapsed).toString().padStart(2, "0")}
               </p>
               <p className="diff">:</p>
               <p className="seconds time">
-                {Math.floor(timeElapsed % 60)
-                  .toString()
-                  .padStart(2, "0")}
+                {getSeconds(timeElapsed).toString().padStart(2, "0")}
               </p>
             </div>
           )}
