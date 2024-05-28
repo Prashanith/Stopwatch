@@ -1,40 +1,34 @@
 import { useState } from "react";
 
 function StopWatch() {
-  const [timeElapsed, setElapsedTime] = useState<number | null>(null);
-
-  const [startTime, setStartTime] = useState<number | null>(null);
+  const [timeElapsed, setElapsedTime] = useState<number>(0);
   const [laps, setLaps] = useState<string[]>([]);
 
   function addLap() {
     const lap =
-      Math.floor((timeElapsed! / (1000 * 60 * 60)) % 24)
+      Math.floor((timeElapsed / (1000 * 60 * 60)) % 24)
         .toString()
         .padStart(2, "0") +
       ":" +
-      Math.floor((timeElapsed! / (1000 * 60)) % 60)
+      Math.floor((timeElapsed / (1000 * 60)) % 60)
         .toString()
         .padStart(2, "0") +
       ":" +
-      Math.floor((timeElapsed! / 1000) % 60)
+      Math.floor((timeElapsed / 1000) % 60)
         .toString()
         .padStart(2, "0");
     setLaps((prevLaps) => [...prevLaps, lap]);
   }
 
   function startPauseTime() {
-    const date = Date.now();
-    setStartTime((prev) => date);
-    console.log(startTime);
     setInterval(() => {
-      setElapsedTime((prev) => Date.now() - date);
+      setElapsedTime((prev) => prev + 1);
     }, 1000);
   }
 
   function resetTime() {
     setLaps((laps) => []);
-    setStartTime((prev) => null);
-    setElapsedTime((prev) => null);
+    setElapsedTime((prev) => prev - prev);
   }
 
   return (
@@ -44,22 +38,23 @@ function StopWatch() {
         className="flex flex-col justify-center items-center space-y-10"
       >
         <div id="time">
-          {startTime && timeElapsed && (
+          {timeElapsed}
+          {timeElapsed > 0 && (
             <div className="text-white text-9xl flex flex-row justify-center items-center">
               <p className="hours time">
-                {Math.floor((timeElapsed / (1000 * 60 * 60)) % 24)
+                {Math.floor(timeElapsed / 3600)
                   .toString()
                   .padStart(2, "0")}
               </p>
               <p className="diff">:</p>
               <p className="minutes time">
-                {Math.floor((timeElapsed / (1000 * 60)) % 60)
+                {Math.floor((timeElapsed % 3600) / 60)
                   .toString()
                   .padStart(2, "0")}
               </p>
               <p className="diff">:</p>
               <p className="seconds time">
-                {Math.floor((timeElapsed / 1000) % 60)
+                {Math.floor(timeElapsed % 60)
                   .toString()
                   .padStart(2, "0")}
               </p>
